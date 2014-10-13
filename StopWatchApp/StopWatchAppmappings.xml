@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application name="StopWatchApp" id="StopWatchApp">
+    <container type="form" id="frmHome" displayname="Form"/>
+    <container type="form" id="frmSettings" displayname="Form">
+        <component type="textbox2" id="tbxTextSize" displayname="TextBox2"/>
+        <component type="textbox2" id="tbxWidgetTransparancy" displayname="TextBox2"/>
+    </container>
+    <container type="form" id="frmSubSettings" displayname="Form">
+        <component type="textbox2" id="tbxRed" displayname="TextBox2"/>
+        <component type="textbox2" id="tbxGreen" displayname="TextBox2"/>
+        <component type="textbox2" id="tbxBlue" displayname="TextBox2"/>
+    </container>
+    <globalsequences/>
+    <skins/>
+</application>
