@@ -84,8 +84,8 @@ function frmHomeGlobals() {
     var MenuId = [];
     frmHome = new kony.ui.Form2({
         "id": "frmHome",
-        "title": "StopWatch",
         "needAppMenu": true,
+        "title": "StopWatch",
         "enabledForIdleTimeout": false,
         "skin": "frm",
         "addWidgets": addWidgetsfrmHome
@@ -108,6 +108,7 @@ function frmHomeGlobals() {
         "titleBarConfig": {
             "renderTitleText": true,
             "titleBarRightSideView": "title",
+            "titleBarLeftSideView": "none",
             "closureRightSideView": navigateToSettings,
             "labelRightSideView": "Settings"
         },

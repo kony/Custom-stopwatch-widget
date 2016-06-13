@@ -16,6 +16,7 @@ function addWidgetsfrmSubSettings() {
         "paddingInPixel": false,
         "containerWeight": 50
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var tbxRed = new kony.ui.TextBox2({
@@ -97,6 +98,7 @@ function addWidgetsfrmSubSettings() {
         "paddingInPixel": false,
         "containerWeight": 50
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var tbxGreen = new kony.ui.TextBox2({
@@ -178,6 +180,7 @@ function addWidgetsfrmSubSettings() {
         "paddingInPixel": false,
         "containerWeight": 50
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var tbxBlue = new kony.ui.TextBox2({
@@ -277,8 +280,8 @@ function frmSubSettingsGlobals() {
     var MenuId = [];
     frmSubSettings = new kony.ui.Form2({
         "id": "frmSubSettings",
-        "title": "Sub Settings",
         "needAppMenu": true,
+        "title": "Sub Settings",
         "enabledForIdleTimeout": false,
         "skin": "frm",
         "addWidgets": addWidgetsfrmSubSettings
@@ -300,6 +303,7 @@ function frmSubSettingsGlobals() {
         "titleBarSkin": "titleBar",
         "titleBarConfig": {
             "renderTitleText": true,
+            "titleBarRightSideView": "none",
             "titleBarLeftSideView": "button",
             "imageLeftSideView": "back_ico.png",
             "closureLeftSideView": saveSubSettings

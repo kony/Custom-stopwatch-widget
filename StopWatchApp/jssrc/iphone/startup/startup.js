@@ -5,13 +5,15 @@ var appConfig = {
     appName: "StopWatchApp",
     appVersion: "1.0.0",
     platformVersion: null,
-    serverIp: "10.10.12.134",
-    serverPort: "80",
+    serverIp: "127.0.0.1",
+    serverPort: "8080",
     secureServerPort: "443",
     isDebug: true,
-    middlewareContext: "StopWatchApp",
-    url: "https://companyabc.konycloud.com/StopWatchApp/MWServlet",
-    secureurl: "https://companyabc.konycloud.com/StopWatchApp/MWServlet"
+    middlewareContext: "middleware",
+    isMFApp: false,
+    eventTypes: [],
+    url: "http://127.0.0.1:8080/middleware/MWServlet",
+    secureurl: "http://127.0.0.1:8080/middleware/MWServlet"
 };
 sessionID = "";
 
@@ -46,6 +48,12 @@ function themeCallBack() {
 
 function loadResources() {
     globalhttpheaders = {};
+    sdkInitConfig = {
+        "appConfig": appConfig,
+        "isMFApp": appConfig.isMFApp,
+        "eventTypes": appConfig.eventTypes
+    }
+    kony.setupsdks(sdkInitConfig, null, null);
     kony.theme.setCurrentTheme("default", themeCallBack, themeCallBack);
 };
 kony.application.setApplicationMode(constants.APPLICATION_MODE_NATIVE);

@@ -32,6 +32,7 @@ function addWidgetsfrmSettings() {
         "paddingInPixel": false,
         "containerWeight": 50
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var tbxTextSize = new kony.ui.TextBox2({
@@ -113,6 +114,7 @@ function addWidgetsfrmSettings() {
         "paddingInPixel": false,
         "containerWeight": 50
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var tbxWidgetTransparancy = new kony.ui.TextBox2({
@@ -220,6 +222,7 @@ function addWidgetsfrmSettings() {
         "paddingInPixel": false,
         "containerWeight": 86
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var image2214053775411487 = new kony.ui.Image2({
@@ -287,6 +290,7 @@ function addWidgetsfrmSettings() {
         "paddingInPixel": false,
         "containerWeight": 87
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var image2214053775413376 = new kony.ui.Image2({
@@ -354,6 +358,7 @@ function addWidgetsfrmSettings() {
         "paddingInPixel": false,
         "containerWeight": 87
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var image2214053775442998 = new kony.ui.Image2({
@@ -421,6 +426,7 @@ function addWidgetsfrmSettings() {
         "paddingInPixel": false,
         "containerWeight": 87
     }, {
+        "textCopyable": false,
         "wrapping": constants.WIDGET_TEXT_WORD_WRAP
     });
     var image2214053775445150 = new kony.ui.Image2({
@@ -506,8 +512,8 @@ function frmSettingsGlobals() {
     var MenuId = [];
     frmSettings = new kony.ui.Form2({
         "id": "frmSettings",
-        "title": "Settings",
         "needAppMenu": true,
+        "title": "Settings",
         "enabledForIdleTimeout": false,
         "skin": "frm",
         "addWidgets": addWidgetsfrmSettings
@@ -529,6 +535,7 @@ function frmSettingsGlobals() {
         "titleBarSkin": "titleBar",
         "titleBarConfig": {
             "renderTitleText": true,
+            "titleBarRightSideView": "none",
             "titleBarLeftSideView": "button",
             "imageLeftSideView": "back_ico.png",
             "closureLeftSideView": saveSettings

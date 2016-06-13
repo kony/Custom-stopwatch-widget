@@ -1,7 +1,7 @@
 function getKonyMBAASAppKey() {
-    return $appKey;
+    return '${mbaasappkey}';
 }
 
 function getKonyMBAASAppSecret() {
-    return $appSecret;
+    return '${mbaasappsecret}';
 }

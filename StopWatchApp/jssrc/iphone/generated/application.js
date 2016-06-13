@@ -36,7 +36,7 @@ function appmiddlewareinvoker(inputParam, isBlocking, indicator, datasetID) {
         if (inputParam["httpheaders"]) {
             inputParam.httpheaders = mergeHeaders(inputParam.httpheaders, globalhttpheaders);
         } else {
-            inputParam["httpheaders"] = globalhttpheaders;
+            inputParam["httpheaders"] = mergeHeaders({}, globalhttpheaders);
         };
     };
     var resulttable = kony.net.invokeService(url, inputParam, isBlocking);
@@ -66,7 +66,7 @@ function appmiddlewaresecureinvoker(inputParam, isBlocking, indicator, datasetID
         if (inputParam["httpheaders"]) {
             inputParam.httpheaders = mergeHeaders(inputParam.httpheaders, globalhttpheaders);
         } else {
-            inputParam["httpheaders"] = globalhttpheaders;
+            inputParam["httpheaders"] = mergeHeaders({}, globalhttpheaders);
         };
     };
     var resulttable = kony.net.invokeService(url, inputParam, isBlocking);
@@ -90,7 +90,7 @@ function appmiddlewareinvokerasync(inputParam, callBack) {
         if (inputParam["httpheaders"]) {
             inputParam.httpheaders = mergeHeaders(inputParam.httpheaders, globalhttpheaders);
         } else {
-            inputParam.httpheaders = globalhttpheaders;
+            inputParam.httpheaders = mergeHeaders({}, globalhttpheaders);
         };
     };
     var connHandle = kony.net.invokeServiceAsync(url, inputParam, callBack)
@@ -109,11 +109,33 @@ function appmiddlewaresecureinvokerasync(inputParam, callBack) {
         if (inputParam["httpheaders"]) {
             inputParam.httpheaders = mergeHeaders(inputParam.httpheaders, globalhttpheaders);
         } else {
-            inputParam["httpheaders"] = globalhttpheaders;
+            inputParam["httpheaders"] = mergeHeaders({}, globalhttpheaders);
         };
     };
     var connHandle = kony.net.invokeServiceAsync(url, inputParam, callBack)
     return connHandle;
+};
+
+function appmiddlewaresecureinvokerasyncForMBAAS(inputParam, serviceID, operationID, callBack) {
+    var url = appConfig.secureurl;
+    var sessionIdKey = "cacheid";
+    inputParam.appID = appConfig.appId;
+    inputParam.appver = appConfig.appVersion;
+    inputParam["channel"] = "rc";
+    inputParam["platform"] = kony.os.deviceInfo().name;
+    inputParam[sessionIdKey] = sessionID;
+    if (globalhttpheaders) {
+        if (inputParam["httpheaders"]) {
+            inputParam.httpheaders = mergeHeaders(inputParam.httpheaders, globalhttpheaders);
+        } else {
+            inputParam["httpheaders"] = mergeHeaders({}, globalhttpheaders);
+        };
+    };
+    if (kony.mbaas) {
+        kony.mbaas.invokeMbaasServiceFromKonyStudio(url, inputParam, serviceID, operationID, callBack);
+    } else {
+        alert("Unable to find the MBAAS SDK for KonyStudio. Please download the SDK from the Kony Cloud Console and add as module to the Kony Project.");
+    }
 };
 
 function makeCall(eventobject) {
